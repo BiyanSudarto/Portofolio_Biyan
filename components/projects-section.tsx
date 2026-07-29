@@ -58,12 +58,10 @@ export function ProjectsSection() {
               className="glass group flex flex-col overflow-hidden rounded-3xl transition-colors duration-300 hover:border-primary/40"
             >
               <div className="relative aspect-16/9 overflow-hidden">
-                <Image
+                <img
                   src={project.image}
                   alt={`Key art for ${project.title}`}
-                  fill
-                  sizes="(min-width: 768px) 45vw, 90vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0 h-full w-full"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-card via-card/20 to-transparent" />
                 <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">

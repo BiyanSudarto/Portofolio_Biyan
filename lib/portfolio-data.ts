@@ -18,7 +18,7 @@ export const highlights = [
 
 export const skillGroups = [
   {
-    title: 'Design Craft',
+    title: 'Design',
     skills: [
       { name: 'Game Design', level: 92 },
       { name: 'Gameplay Mechanics', level: 94 },

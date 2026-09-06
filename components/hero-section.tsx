@@ -8,7 +8,7 @@ import { MagneticButton } from '@/components/magnetic-button'
 import { ParticleField } from '@/components/particle-field'
 import { stats } from '@/lib/portfolio-data'
 
-const roles = ['Game Designer', 'Mechanics Designer', 'Progression Designer']
+const roles = ['Game Designer', 'Game Programmer', 'Full Stack Developer', 'UI/UX Designer', '3D Artist', '2D Artist']
 
 function TypingRoles() {
   const [index, setIndex] = useState(0)
@@ -94,7 +94,7 @@ export function HeroSection() {
               View Portfolio
               <ArrowRight className="size-4" />
             </MagneticButton>
-            <MagneticButton href="/cv-atmaghani-biyan-sudarto.pdf" variant="accent" download>
+            <MagneticButton href="/CV_Atmaghani_Biyan_Sudarto_MT.pdf" variant="accent" download>
               Download CV
               <Download className="size-4" />
             </MagneticButton>

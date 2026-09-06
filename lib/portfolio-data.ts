@@ -220,6 +220,13 @@ export const processSteps = [
 
 export const experiences = [
   {
+    period: '2022 — 2026',
+    role: 'Student, Game Technology',
+    org: 'Politeknik Elektronika Negeri Surabaya (PENS)',
+    description:
+      'Studying interactive systems, game production pipelines, and applied design frameworks such as MDA.',
+  },
+  {
     period: '2024 — Present',
     role: 'Game Designer · Mechanics & Progression',
     org: 'Team Projects',
@@ -227,19 +234,13 @@ export const experiences = [
       'Designing gameplay mechanics, economy loops, and progression systems across platformer, arcade, and simulation titles.',
   },
   {
-    period: '2024 — 2025',
+    period: '2025 — 2025',
     role: 'Game Programmer',
     org: 'Nilawarsa Studio',
     description:
       'Implemented character controllers, enemy AI, puzzle systems, and UI flow for Fix The Spaceship using modular architecture.',
   },
-  {
-    period: '2022 — 2026',
-    role: 'Student, Game Technology',
-    org: 'Politeknik Elektronika Negeri Surabaya (PENS)',
-    description:
-      'Studying interactive systems, game production pipelines, and applied design frameworks such as MDA.',
-  },
+  
   {
   period: '2026 — Present',
   role: 'Full Stack Developer',

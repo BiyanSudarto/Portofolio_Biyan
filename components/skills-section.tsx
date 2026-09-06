@@ -13,7 +13,7 @@ export function SkillsSection() {
       />
       <SectionHeading
         eyebrow="Skills"
-        title="Design craft, measured"
+        title="Design, measured"
         description="A toolkit built around gameplay systems, balance, and the tools that ship them."
       />
 

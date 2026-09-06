@@ -19,11 +19,11 @@ export function AboutSection() {
             My name is <span className="font-semibold text-primary">Atmaghani Biyan Sudarto</span>.
           </p>
           <p className="leading-relaxed text-pretty text-muted-foreground">
-            I am a Game Designer with over two years of experience in designing gameplay mechanics,
+            I am a Designer & Programmer with over two years of experience in designing gameplay mechanics,
             progression systems, and player experiences.
           </p>
           <p className="leading-relaxed text-pretty text-muted-foreground">
-            Currently studying at Politeknik Elektronika Negeri Surabaya (PENS).
+            Bachelor's degree in Game Technology from Politeknik Elektronika Negeri Surabaya (PENS).
           </p>
           <p className="leading-relaxed text-pretty text-muted-foreground">
             I enjoy creating systems that are easy to understand, rewarding to master, and capable

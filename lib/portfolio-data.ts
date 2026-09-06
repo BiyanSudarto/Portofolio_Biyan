@@ -196,7 +196,7 @@ export const processSteps = [
     description: 'Define the core fantasy, pillars, and the loop the whole game will orbit.',
   },
   {
-    title: 'Mechanics Design',
+    title: 'Design',
     description: 'Translate the concept into rules, verbs, and systems with clear feedback.',
   },
   {
@@ -204,7 +204,7 @@ export const processSteps = [
     description: 'Build the smallest playable slice that proves whether the loop is fun.',
   },
   {
-    title: 'Playtesting',
+    title: 'testing',
     description: 'Watch real players, collect data, and separate opinions from behaviour.',
   },
   {
@@ -221,7 +221,7 @@ export const experiences = [
   {
     period: '2024 — Present',
     role: 'Game Designer · Mechanics & Progression',
-    org: 'Independent & Team Projects',
+    org: 'Team Projects',
     description:
       'Designing gameplay mechanics, economy loops, and progression systems across platformer, arcade, and simulation titles.',
   },
@@ -233,12 +233,19 @@ export const experiences = [
       'Implemented character controllers, enemy AI, puzzle systems, and UI flow for Fix The Spaceship using modular architecture.',
   },
   {
-    period: '2023 — Present',
+    period: '2023 — 20267',
     role: 'Student, Game Technology',
     org: 'Politeknik Elektronika Negeri Surabaya (PENS)',
     description:
       'Studying interactive systems, game production pipelines, and applied design frameworks such as MDA.',
   },
+  {
+  period: '2026 — Present',
+  role: 'Full Stack Developer',
+  org: 'Independent Projects',
+  description:
+    'Building web applications and digital solutions designed to solve everyday real-world problems and streamline daily activities.',
+  }
 ]
 
 export const tools = [
@@ -246,15 +253,19 @@ export const tools = [
   'Figma',
   'Visual Studio',
   'Git',
-  'Photoshop',
-  'Illustrator',
+  'Canva',
+  'Unreal',
+  'Microsoft Excel',
+  'Microsoft PowerPoint',
+  'microsoft Word',
 ]
 
 export const stats = [
   { value: 2, suffix: '+', label: 'Years Designing' },
-  { value: 4, suffix: '', label: 'Shipped Projects' },
+  { value: 1, suffix: '<', label: 'Years Programming' },
+  { value: 7, suffix: '', label: 'Shipped Projects' },
   { value: 1, suffix: 'st', label: 'Place KMIPN VI' },
-  { value: 15, suffix: '+', label: 'Systems Designed' },
+  { value: 20, suffix: '+', label: 'Systems Designed' },
 ]
 
 export const contactChannels = [

@@ -8,7 +8,7 @@ import { MagneticButton } from '@/components/magnetic-button'
 import { ParticleField } from '@/components/particle-field'
 import { stats } from '@/lib/portfolio-data'
 
-const roles = ['Game Designer', 'Game Programmer', 'Full Stack Developer', 'UI/UX Designer', '3D Artist', '2D Artist']
+const roles = ['Game Designer', 'Game Programmer', 'Full Stack Developer']
 
 function TypingRoles() {
   const [index, setIndex] = useState(0)

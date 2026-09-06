@@ -94,7 +94,7 @@ export function HeroSection() {
               View Portfolio
               <ArrowRight className="size-4" />
             </MagneticButton>
-            <MagneticButton href="/CV_Atmaghani_Biyan_Sudarto_MT.pdf" variant="accent" download>
+            <MagneticButton href="/CV_Atmaghani_Biyan_Sudarto.pdf" variant="accent" download>
               Download CV
               <Download className="size-4" />
             </MagneticButton>

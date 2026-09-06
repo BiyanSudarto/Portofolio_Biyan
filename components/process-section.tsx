@@ -19,7 +19,7 @@ export function ProcessSection() {
   return (
     <section id="process" className="relative mx-auto max-w-4xl px-6 py-24">
       <SectionHeading
-        eyebrow="Game Design Process"
+        eyebrow="Design Process"
         title="From research to final design"
         description="A repeatable loop that turns an idea into a system players can master."
       />

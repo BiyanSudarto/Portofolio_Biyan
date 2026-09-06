@@ -25,7 +25,7 @@ export function ContactSection() {
       <SectionHeading
         eyebrow="Contact"
         title="Let's design something players remember"
-        description="Open to game design roles, internships, and collaboration on gameplay systems."
+        description="Open to design roles, internships, collaboration on gameplay systems and Progammer."
       />
 
       <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.2fr]">

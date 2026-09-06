@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <p className="font-display text-lg font-bold">Atmaghani Biyan Sudarto</p>
-          <p className="text-sm text-primary">Game Designer</p>
+          <p className="text-sm text-primary">Designer/progammer</p>
         </div>
 
         <nav aria-label="Footer navigation">

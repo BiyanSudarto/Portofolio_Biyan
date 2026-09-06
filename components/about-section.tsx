@@ -33,8 +33,7 @@ export function AboutSection() {
           <div className="glass mt-2 rounded-2xl p-5">
             <p className="font-display text-sm font-semibold text-primary">Currently focused on</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Progression curves, reward pacing, and economy balance for simulation and arcade
-              gameplay loops.
+             Combining game design mechanics and progression balance with full-stack web development to create interactive and scalable digital solutions.
             </p>
           </div>
         </Reveal>

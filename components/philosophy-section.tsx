@@ -1,11 +1,6 @@
 import { Quote } from 'lucide-react'
 import { Reveal, SectionHeading } from '@/components/reveal'
 
-const testimonialSlots = [
-  { role: 'Studio Lead', hint: 'Reserved for future studio collaboration feedback.' },
-  { role: 'Team Member', hint: 'Reserved for teammate feedback from upcoming projects.' },
-  { role: 'Playtester', hint: 'Reserved for playtest insights from released builds.' },
-]
 
 export function PhilosophySection() {
   return (
@@ -26,33 +21,11 @@ export function PhilosophySection() {
             engaged.&rdquo;
           </p>
           <footer className="mt-6 text-sm text-muted-foreground">
-            Atmaghani Biyan Sudarto — Game Designer
+            Atmaghani Biyan Sudarto — Designer & Programmer
           </footer>
         </blockquote>
       </Reveal>
 
-      <div className="mt-20">
-        <h3 className="font-display text-center text-lg font-semibold">Testimonials</h3>
-        <p className="mt-2 text-center text-sm text-muted-foreground">
-          Coming soon — space reserved for collaborators and studios.
-        </p>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {testimonialSlots.map((slot, index) => (
-            <Reveal key={slot.role} delay={index * 0.08}>
-              <article className="glass h-full rounded-2xl border-dashed p-6">
-                <div className="flex items-center gap-3">
-                  <span className="size-10 rounded-full bg-secondary" aria-hidden="true" />
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground">{slot.role}</p>
-                    <p className="text-xs text-muted-foreground/70">Pending</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{slot.hint}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }

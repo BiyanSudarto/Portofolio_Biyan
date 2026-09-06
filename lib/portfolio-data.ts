@@ -40,6 +40,7 @@ export const skillGroups = [
     title: 'Production Tools',
     skills: [
       { name: 'Unity', level: 87 },
+      { name: 'Unreal Engine', level: 70 },
       { name: 'C#', level: 83 },
       { name: 'Figma', level: 80 },
       { name: 'Git', level: 78 },
@@ -233,7 +234,7 @@ export const experiences = [
       'Implemented character controllers, enemy AI, puzzle systems, and UI flow for Fix The Spaceship using modular architecture.',
   },
   {
-    period: '2023 — 20267',
+    period: '2022 — 2026',
     role: 'Student, Game Technology',
     org: 'Politeknik Elektronika Negeri Surabaya (PENS)',
     description:

@@ -94,9 +94,11 @@ export function ExperienceSection() {
 
               {active === 'work' && experiences.filter((item) => !item.org.startsWith('BSO')).map((item) => (
                 <article key={item.org} className="overflow-hidden rounded-2xl border border-border bg-white">
-                  <button type="button" onClick={() => toggleItem(item.org)} aria-expanded={openItem === item.org} className="flex w-full items-center gap-4 p-4 text-left">
-                    <span className="w-28 shrink-0 text-[10px] font-semibold uppercase tracking-wider text-accent">{item.period}</span>
-                    <span className="min-w-0 flex-1"><span className="block font-display text-sm font-semibold">{item.role}</span><span className="mt-1 block text-xs text-muted-foreground">{item.org}</span></span>
+                  <button type="button" onClick={() => toggleItem(item.org)} aria-expanded={openItem === item.org} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
+                    <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
+                      {item.galleryFolder && imageManifest[item.galleryFolder]?.[0] ? (imageManifest[item.galleryFolder][0].toLowerCase().endsWith('.svg') ? <img src={imageManifest[item.galleryFolder][0]} alt="" className="absolute inset-0 h-full w-full object-cover" /> : <Image src={imageManifest[item.galleryFolder][0]} alt="" fill sizes="56px" className="object-cover" />) : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{item.org.slice(0, 2).toUpperCase()}</span>}
+                    </div>
+                    <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold">{item.role}</p><p className="mt-1 text-xs text-muted-foreground">{item.period} · {item.org}</p></div>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.org ? 'rotate-180' : ''}`} />
                   </button>
                   {openItem === item.org && <div className="border-t border-border px-4 py-4 sm:pl-36"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}

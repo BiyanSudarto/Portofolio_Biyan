@@ -125,7 +125,7 @@ export function ExperienceSection() {
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-accent">{item.period}</p>
                   <h3 className="mt-2 font-display text-base font-semibold">{item.school}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.degree}</p>
-                  <p className="mt-2 text-xs text-muted-foreground">GPA {item.gpa} · Juara 1 Divisi Pengembangan Aplikasi Permainan KMIPN VI</p>
+                  <p className="mt-2 text-xs text-muted-foreground">GPA {item.gpa} · 1st Place in the Game Application Development Division of KMIPN VI</p>
                 </article>)}
                 <article className="rounded-2xl border border-border bg-white p-5">
                   <h3 className="font-display text-sm font-semibold">Certifications</h3>

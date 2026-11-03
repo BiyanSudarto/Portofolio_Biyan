@@ -15,9 +15,6 @@ export function HeroSection() {
         <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
           D4 Game Technology graduate from PENS with experience building web applications, backend transaction systems, and interactive game experiences. Interested in practical problem-solving, system development, and thoughtful gameplay design.
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {['Node.js', 'Express.js', 'PHP', 'JavaScript', 'MySQL', 'SQLite', 'Game Design'].map((item) => <span key={item} className="rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-medium text-secondary-foreground">{item}</span>)}
-        </div>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a href="#experience" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-foreground">Explore experience <ArrowUpRight className="size-4" /></a>
           <a href="/CV_Atmaghani_Biyan_Sudarto.pdf" download className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-3 text-sm font-semibold text-foreground hover:border-primary"><ArrowDownToLine className="size-4" /> Download CV</a>

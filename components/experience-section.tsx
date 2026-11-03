@@ -84,7 +84,7 @@ export function ExperienceSection() {
                     </div>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === project.title ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === project.title && <div className="border-t border-border px-4 pb-4 pt-3 sm:pl-[5.5rem]">
+                  {openItem === project.title && <div className="border-t border-border px-4 py-4">
                     <p className="text-sm leading-6 text-muted-foreground">{project.result}</p>
                     <ul className="mt-3 space-y-1.5">{project.responsibilities.map((item) => <li key={item} className="flex gap-2 text-xs leading-5 text-muted-foreground"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />{item}</li>)}</ul>
                     {project.galleryFolder && <button type="button" onClick={() => openFolderGallery(project.title, project.galleryFolder!)} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View project images ({imageManifest[project.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}
@@ -101,7 +101,7 @@ export function ExperienceSection() {
                     <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.org}</p><p className="mt-1 truncate text-xs text-muted-foreground">{item.role} · {item.period}</p></div>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.org ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.org && <div className="border-t border-border px-4 py-4 sm:pl-[5.5rem]"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}
+                  {openItem === item.org && <div className="border-t border-border px-4 py-4"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}
                 </article>
               ))}
 
@@ -112,7 +112,7 @@ export function ExperienceSection() {
                     <span className="min-w-0 flex-1"><span className="block font-display text-sm font-semibold">{item.role}</span><span className="mt-1 block text-xs text-muted-foreground">{item.org}</span></span>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.role ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.role && <p className="border-t border-border px-4 py-4 text-sm leading-6 text-muted-foreground sm:pl-36">{item.description}</p>}
+                  {openItem === item.role && <p className="border-t border-border px-4 py-4 text-sm leading-6 text-muted-foreground">{item.description}</p>}
                 </article>
               ))}
 

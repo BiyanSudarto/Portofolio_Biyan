@@ -18,8 +18,7 @@ const imageManifest: Record<string, string[]> = {
     "/images/projects/gading-catering/1Dashboard.png",
     "/images/projects/gading-catering/Input Pengeluaran.png",
     "/images/projects/gading-catering/Input Pesanan.png",
-    "/images/projects/gading-catering/Kelola Usaha.png",
-    "/images/projects/gading-catering/preview-dummy.svg"
+    "/images/projects/gading-catering/Kelola Usaha.png"
   ],
   "projects/makelar": [
     "/images/projects/makelar/1Lobby.jpg",

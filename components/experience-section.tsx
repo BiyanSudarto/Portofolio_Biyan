@@ -101,7 +101,7 @@ export function ExperienceSection() {
                     <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.org}</p><p className="mt-1 truncate text-xs text-muted-foreground">{item.role} · {item.period}</p></div>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.org ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.org && <div className="border-t border-border px-4 py-4 sm:pl-36"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}
+                  {openItem === item.org && <div className="border-t border-border px-4 py-4 sm:pl-[5.5rem]"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}
                 </article>
               ))}
 

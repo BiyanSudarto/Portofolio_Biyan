@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
+import { BriefcaseBusiness, Code2, Mail } from 'lucide-react'
 
 export function ContactSection() {
   return (
@@ -10,8 +10,8 @@ export function ContactSection() {
       </div>
       <div className="flex flex-wrap gap-2">
         <a href="mailto:biyansudarto05@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-foreground"><Mail className="size-3.5" /> Send email</a>
-        <a href="https://linkedin.com/in/biyansudarto" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><Linkedin className="size-4" /></a>
-        <a href="https://github.com/BiyanSudarto" target="_blank" rel="noreferrer" aria-label="GitHub" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><Github className="size-4" /></a>
+        <a href="https://linkedin.com/in/biyansudarto" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><BriefcaseBusiness className="size-4" /></a>
+        <a href="https://github.com/BiyanSudarto" target="_blank" rel="noreferrer" aria-label="GitHub" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><Code2 className="size-4" /></a>
       </div>
     </section>
   )

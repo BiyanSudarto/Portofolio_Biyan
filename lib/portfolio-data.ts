@@ -30,6 +30,7 @@ export type Project = {
   role: string
   period?: string
   image?: string
+  gallery?: string[]
   categories: ProjectFilter[]
   responsibilities: string[]
   result: string
@@ -55,6 +56,7 @@ export const projects: Project[] = [
     role: 'Web Developer',
     period: 'May 2026 — Jun 2026',
     image: '/images/katering-remake.png',
+    gallery: ['/images/katering-remake.png'],
     categories: ['Web Development', 'Programming'],
     responsibilities: ['Built an interactive menu catalog and automatic order-price calculation', 'Developed an admin CRUD dashboard for menu, price, and stock management', 'Applied automatic form validation when ingredients were out of stock', 'Integrated WhatsApp API to send structured order details'],
     result: 'A more structured catering order flow for customers and administrators.',
@@ -67,6 +69,7 @@ export const projects: Project[] = [
     role: 'Game Designer / Programmer',
     period: 'Jun 2025 — Jul 2026',
     image: '/images/project-redlife.png',
+    gallery: ['/images/project-redlife.png'],
     categories: ['Game Design', 'Programming'],
     responsibilities: ['Designed 20 gameplay mechanics, character progression, and the survival loop', 'Resolved more than 40% of design issues before they affected production', 'Analyzed playtest data to improve player interest by 80%', 'Programmed mechanics independently, improving programmer workflow efficiency by 30%'],
     result: 'A survival experience built around resource management, exploration, and crafting.',
@@ -77,6 +80,7 @@ export const projects: Project[] = [
     platform: 'PC',
     role: 'Game Designer',
     image: '/images/project-ecosity.png',
+    gallery: ['/images/project-ecosity.png'],
     categories: ['Game Design'],
     responsibilities: ['Designed quest, shop, gardening, and water systems', 'Planned renewable-energy management and automation', 'Structured upgrade progression for tools and facilities'],
     result: 'A connected farming-management loop combining production, resources, and upgrades.',
@@ -87,6 +91,7 @@ export const projects: Project[] = [
     platform: 'Desktop',
     role: 'Game Designer',
     image: '/images/project-sea.png',
+    gallery: ['/images/project-sea.png'],
     categories: ['Game Design'],
     responsibilities: ['Designed the quiz gameplay loop', 'Created Remove Wrong Answer, Slow Time, and Second Chance abilities', 'Tuned the question timer to add decision pressure'],
     result: 'Interactive educational gameplay with strategic decision-making.',
@@ -98,6 +103,7 @@ export const projects: Project[] = [
     platform: 'Desktop',
     role: 'Programmer',
     image: '/images/project-spaceship.png',
+    gallery: ['/images/project-spaceship.png'],
     categories: ['Programming'],
     responsibilities: ['Programmed core gameplay mechanics and UI', 'Built waypoint-based enemy patrol behaviour', 'Implemented static and dynamic hazards with collision detection'],
     result: 'Gameplay systems and enemy behaviours implemented for a puzzle-platforming experience.',

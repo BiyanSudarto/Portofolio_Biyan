@@ -56,8 +56,8 @@ export const projects: Project[] = [
     period: 'Jan 2026 — Feb 2026',
     galleryFolder: 'projects/gading-catering',
     categories: ['Web Development', 'Programming'],
-    responsibilities: ['Simplified catering bookkeeping through automated cash-flow records', 'Designed the MySQL database schema', 'Built a multi-item purchase input form'],
-    result: 'A catering financial accounting system for more structured cash-flow and purchase recording.',
+    responsibilities: ['Mempermudah pembukuan katering untuk pencatatan arus keuangan secara otomatis', 'Merancang skema basis data MySQL', 'Membangun form input belanja'],
+    result: 'Sistem pencatatan keuangan katering untuk membantu pengelolaan arus kas dan transaksi belanja secara lebih terstruktur.',
   },
   {
     title: 'Red Life',
@@ -105,8 +105,8 @@ export const workExperiences: Project[] = [
     period: 'Aug 2026 — Present',
     galleryFolder: 'work/razzan-store',
     categories: ['Programming'],
-    responsibilities: ['Developed a game top-up backend using Node.js and Express.js', 'Integrated APIs for payment processing and product delivery', 'Designed transaction verification and a database for automatic order-status updates'],
-    result: 'A backend transaction flow supporting payment verification and automated product fulfillment.',
+    responsibilities: ['Mengembangkan backend sistem top-up game menggunakan Node.js dan Express.js', 'Mengintegrasikan API untuk pembayaran serta pengiriman produk', 'Merancang verifikasi transaksi dan database untuk pembaruan status pesanan otomatis'],
+    result: 'Backend sistem top-up game dengan proses pembayaran, verifikasi transaksi, dan pengiriman produk secara otomatis.',
   },
   {
     title: 'Fix The Spaceship',
@@ -117,8 +117,8 @@ export const workExperiences: Project[] = [
     period: 'May 2026 — Jun 2026',
     galleryFolder: 'work/nilawarsa-studio',
     categories: ['Programming'],
-    responsibilities: ['Programmed core game systems, mechanics, and UI to improve the gameplay experience', 'Wrote automated enemy AI scripts using waypoint-based patrol logic', 'Implemented static and dynamic hazards with precise collision detection'],
-    result: 'Gameplay systems, enemy patrol behaviour, and hazards implemented for a puzzle-platforming game.',
+    responsibilities: ['Memprogram sistem inti, seluruh mekanik game, dan UI untuk mengoptimalkan pengalaman bermain', 'Menulis skrip AI musuh otomatis menggunakan sistem waypoint untuk logika patroli', 'Mengimplementasikan hazard statis dan dinamis dengan sistem deteksi collision yang presisi'],
+    result: 'Sistem gameplay, AI musuh berbasis waypoint, dan hazard diimplementasikan untuk pengalaman puzzle platformer.',
   },
 ]
 

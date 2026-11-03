@@ -54,7 +54,7 @@ export function ExperienceSection() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.2em] text-accent">Career overview</p>
           <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">Experience & selected work</h2>
-          <p className="mt-2 max-w-xl text-sm text-muted-foreground">Pilih kategori untuk melihat detail pengalaman tanpa memenuhi halaman dengan terlalu banyak konten.</p>
+          <p className="mt-2 max-w-xl text-sm text-muted-foreground">Select a category to explore experience details while keeping the page concise.</p>
         </div>
       </div>
 

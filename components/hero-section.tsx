@@ -22,7 +22,7 @@ export function HeroSection() {
           <a href="#experience" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-foreground">Explore experience <ArrowUpRight className="size-4" /></a>
           <a href="/CV_Atmaghani_Biyan_Sudarto.pdf" download className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-3 text-sm font-semibold text-foreground hover:border-primary"><ArrowDownToLine className="size-4" /> Download CV</a>
         </div>
-        <p className="mt-7 flex items-center gap-2 text-xs text-muted-foreground"><MapPin className="size-3.5 text-accent" /> Tuban, Jawa Timur, Indonesia</p>
+        <p className="mt-7 flex items-center gap-2 text-xs text-muted-foreground"><MapPin className="size-3.5 text-accent" /> Tuban, East Java, Indonesia</p>
       </div>
       <div className="relative order-1 mx-auto w-full max-w-[230px] lg:order-2 lg:max-w-[300px]">
         <div className="absolute -bottom-3 -left-3 -z-10 h-4/5 w-4/5 rounded-[1.6rem] bg-secondary" />

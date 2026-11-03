@@ -29,7 +29,6 @@ export function HeroSection() {
         <div className="overflow-hidden rounded-[1.6rem] border border-border bg-white p-1.5 shadow-lg shadow-black/5">
           <Image src="/images/biyan-portrait.png" alt="Portrait of Atmaghani Biyan Sudarto" width={640} height={800} priority className="aspect-[4/5] w-full rounded-[1.2rem] object-cover" />
         </div>
-        <div className="absolute -right-4 bottom-5 rounded-full border border-border bg-white px-3.5 py-2 text-[11px] font-medium shadow-sm">PENS · D4 Teknologi Game</div>
       </div>
     </section>
   )

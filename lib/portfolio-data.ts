@@ -149,6 +149,7 @@ export const training = [
   { title: 'Spec-Driven Development with Kiro', provider: 'Dicoding', period: 'Oct 2026 — Nov 2026' },
   { title: 'Introduction to Python Programming', provider: 'Dicoding', period: 'Oct 2026 — Nov 2026' },
   { title: 'Learn Basic Web Programming', provider: 'Dicoding', period: 'Sep 2026 — Nov 2026' },
+  { title: 'Belajar Dasar Cloud dan Gen AI di AWS', provider: 'Dicoding', period: 'Sep 2026 — Nov 2026' },
 ]
 
 export const contactChannels = [

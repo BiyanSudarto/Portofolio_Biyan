@@ -10,7 +10,7 @@ const imageManifest: Record<string, string[]> = {
     "/images/projects/gading-catering/preview-dummy.svg"
   ],
   "projects/makelar": [
-    "/images/makelar/project-makelar.png"
+    "/images/projects/makelar/project-makelar.png"
   ],
   "projects/project-lune": [
     "/images/projects/project-lune/preview-dummy.svg",

@@ -31,6 +31,7 @@ export type Project = {
   period?: string
   image?: string
   gallery?: string[]
+  galleryFolder?: string
   categories: ProjectFilter[]
   responsibilities: string[]
   result: string
@@ -44,6 +45,7 @@ export const projects: Project[] = [
     platform: 'Web',
     role: 'Full Stack Developer',
     period: '2026',
+    galleryFolder: 'project-lune',
     categories: ['Web Development', 'Programming'],
     responsibilities: ['Developed a portfolio website using Laravel and Vue.js', 'Used MySQL to manage website data', 'Managed experience and project records for display on the website'],
     result: 'A portfolio website with structured data for work experience and project presentation.',
@@ -56,7 +58,7 @@ export const projects: Project[] = [
     role: 'Web Developer',
     period: 'May 2026 — Jun 2026',
     image: '/images/catering/katering-remake.png',
-    gallery: ['/images/catering/katering-remake.png'],
+    galleryFolder: 'catering',
     categories: ['Web Development', 'Programming'],
     responsibilities: ['Built an interactive menu catalog and automatic order-price calculation', 'Developed an admin CRUD dashboard for menu, price, and stock management', 'Applied automatic form validation when ingredients were out of stock', 'Integrated WhatsApp API to send structured order details'],
     result: 'A more structured catering order flow for customers and administrators.',
@@ -69,7 +71,7 @@ export const projects: Project[] = [
     role: 'Game Designer / Programmer',
     period: 'Jun 2025 — Jul 2026',
     image: '/images/red-life/project-redlife.png',
-    gallery: ['/images/red-life/project-redlife.png'],
+    galleryFolder: 'red-life',
     categories: ['Game Design', 'Programming'],
     responsibilities: ['Designed 20 gameplay mechanics, character progression, and the survival loop', 'Resolved more than 40% of design issues before they affected production', 'Analyzed playtest data to improve player interest by 80%', 'Programmed mechanics independently, improving programmer workflow efficiency by 30%'],
     result: 'A survival experience built around resource management, exploration, and crafting.',
@@ -80,7 +82,7 @@ export const projects: Project[] = [
     platform: 'PC',
     role: 'Game Designer',
     image: '/images/ecosity/project-ecosity.png',
-    gallery: ['/images/ecosity/project-ecosity.png'],
+    galleryFolder: 'ecosity',
     categories: ['Game Design'],
     responsibilities: ['Designed quest, shop, gardening, and water systems', 'Planned renewable-energy management and automation', 'Structured upgrade progression for tools and facilities'],
     result: 'A connected farming-management loop combining production, resources, and upgrades.',
@@ -91,7 +93,7 @@ export const projects: Project[] = [
     platform: 'Desktop',
     role: 'Game Designer',
     image: '/images/project-sea/project-sea.png',
-    gallery: ['/images/project-sea/project-sea.png'],
+    galleryFolder: 'project-sea',
     categories: ['Game Design'],
     responsibilities: ['Designed the quiz gameplay loop', 'Created Remove Wrong Answer, Slow Time, and Second Chance abilities', 'Tuned the question timer to add decision pressure'],
     result: 'Interactive educational gameplay with strategic decision-making.',
@@ -103,7 +105,7 @@ export const projects: Project[] = [
     platform: 'Desktop',
     role: 'Programmer',
     image: '/images/fix-the-spaceship/project-spaceship.png',
-    gallery: ['/images/fix-the-spaceship/project-spaceship.png'],
+    galleryFolder: 'fix-the-spaceship',
     categories: ['Programming'],
     responsibilities: ['Programmed core gameplay mechanics and UI', 'Built waypoint-based enemy patrol behaviour', 'Implemented static and dynamic hazards with collision detection'],
     result: 'Gameplay systems and enemy behaviours implemented for a puzzle-platforming experience.',
@@ -115,18 +117,21 @@ export const experiences = [
     period: 'Aug 2026 — Present',
     role: 'Full Stack Developer',
     org: 'Razzan Store · Tuban',
+    galleryFolder: 'razzan-store',
     description: 'Developing a game top-up backend using Node.js and Express.js, integrating Midtrans and Digiflazz for QRIS payments and automated product delivery, and designing transaction verification with SQLite order-status updates.',
   },
   {
     period: 'Jan 2026 — Feb 2026',
     role: 'Full Stack Developer',
     org: 'Gading Catering · Tuban',
+    galleryFolder: 'gading-catering',
     description: 'Developed a catering bookkeeping system to automate cash-flow records, designed the MySQL database schema, and built multi-item purchase forms for transaction and expense recording.',
   },
   {
     period: 'Jan 2025 — Jul 2025',
     role: 'Programmer',
     org: 'Nilawarsa Studio · Pasuruan',
+    galleryFolder: 'nilawarsa-studio',
     description: 'Programmed core game systems, mechanics, and UI; wrote waypoint-based enemy patrol AI; and implemented static and dynamic hazards with collision detection.',
   },
   {

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, Maximize2, X } from '
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { certifications, education, experiences, projects, training } from '@/lib/portfolio-data'
+import imageManifest from '@/lib/image-manifest'
 
 const categories = [
   { id: 'projects', label: 'Projects', count: projects.length },
@@ -24,6 +25,13 @@ export function ExperienceSection() {
   const [galleryOpen, setGalleryOpen] = useState(false)
   const [activeGallery, setActiveGallery] = useState<{ title: string; images: string[] } | null>(null)
   const activeImage = activeGallery?.images[imageIndex]
+  const openFolderGallery = (title: string, folder: string) => {
+    const images = imageManifest[folder] ?? []
+    if (images.length === 0) return
+    setActiveGallery({ title, images })
+    setImageIndex(0)
+    setGalleryOpen(true)
+  }
 
   useEffect(() => {
     if (!galleryOpen) return
@@ -70,7 +78,7 @@ export function ExperienceSection() {
                 <article key={project.title} className="overflow-hidden rounded-2xl border border-border bg-white">
                   <button type="button" onClick={() => toggleItem(project.title)} aria-expanded={openItem === project.title} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
                     <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
-                      {project.image ? <Image src={project.image} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
+                      {(project.image ?? (project.galleryFolder ? imageManifest[project.galleryFolder]?.[0] : undefined)) ? <Image src={(project.image ?? imageManifest[project.galleryFolder!]?.[0])!} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="font-display text-sm font-semibold sm:text-base">{project.title}</p>
@@ -81,7 +89,7 @@ export function ExperienceSection() {
                   {openItem === project.title && <div className="border-t border-border px-4 pb-4 pt-3 sm:pl-[5.5rem]">
                     <p className="text-sm leading-6 text-muted-foreground">{project.result}</p>
                     <ul className="mt-3 space-y-1.5">{project.responsibilities.map((item) => <li key={item} className="flex gap-2 text-xs leading-5 text-muted-foreground"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />{item}</li>)}</ul>
-                    {(project.gallery?.length || project.image) && <button type="button" onClick={() => { setActiveGallery({ title: project.title, images: project.gallery?.length ? project.gallery : [project.image! ] }); setImageIndex(0); setGalleryOpen(true) }} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View project images <ExternalLink className="size-3" /></button>}
+                    {project.galleryFolder && (imageManifest[project.galleryFolder]?.length ?? 0) > 0 && <button type="button" onClick={() => openFolderGallery(project.title, project.galleryFolder!)} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View project images ({imageManifest[project.galleryFolder].length}) <ExternalLink className="size-3" /></button>}
                   </div>}
                 </article>
               ))}
@@ -93,7 +101,7 @@ export function ExperienceSection() {
                     <span className="min-w-0 flex-1"><span className="block font-display text-sm font-semibold">{item.role}</span><span className="mt-1 block text-xs text-muted-foreground">{item.org}</span></span>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.org ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.org && <p className="border-t border-border px-4 py-4 text-sm leading-6 text-muted-foreground sm:pl-36">{item.description}</p>}
+                  {openItem === item.org && <div className="border-t border-border px-4 py-4 sm:pl-36"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && (imageManifest[item.galleryFolder]?.length ?? 0) > 0 && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder].length}) <ExternalLink className="size-3" /></button>}</div>}
                 </article>
               ))}
 

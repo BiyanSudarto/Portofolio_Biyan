@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, ChevronDown, Code2, ExternalLink, Maximize2, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, Maximize2, X } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { certifications, education, experiences, projects, training } from '@/lib/portfolio-data'
@@ -49,7 +49,6 @@ export function ExperienceSection() {
           <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">Experience & selected work</h2>
           <p className="mt-2 max-w-xl text-sm text-muted-foreground">Pilih kategori untuk melihat detail pengalaman tanpa memenuhi halaman dengan terlalu banyak konten.</p>
         </div>
-        <a href="https://github.com/BiyanSudarto" target="_blank" rel="noreferrer" aria-label="Open GitHub profile" title="GitHub" className="inline-flex size-10 items-center justify-center self-start rounded-full border border-border bg-white text-primary transition-colors hover:border-primary hover:bg-secondary sm:self-auto"><Code2 className="size-4" /></a>
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[220px_1fr]">

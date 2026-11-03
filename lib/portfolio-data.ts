@@ -1,22 +1,9 @@
-export const navLinks = [
-  { label: 'Work', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-]
-
 export const highlights = [
   'Full-Stack Development',
   'Backend Systems',
   'Database Design',
   'Gameplay Mechanics',
   'Project Leadership',
-]
-
-export const skillGroups = [
-  { title: 'Development', skills: ['Node.js', 'Express.js', 'PHP', 'JavaScript', 'HTML / CSS'] },
-  { title: 'Database & Tools', skills: ['MySQL', 'SQLite', 'Git / GitHub', 'Visual Studio', 'Microsoft Excel', 'WordPress'] },
-  { title: 'Game & Product', skills: ['Game Mechanics', 'Progression Design', 'System Balancing', 'Unity', 'Unreal Engine', 'Figma'] },
 ]
 
 export const projectFilters = ['All', 'Web Development', 'Game Design', 'Programming'] as const
@@ -156,10 +143,3 @@ export const training = [
   { title: 'Belajar Dasar Cloud dan Gen AI di AWS', provider: 'Dicoding', period: 'Sep 2026 — Nov 2026' },
 ]
 
-export const contactChannels = [
-  { label: 'Email', value: 'biyansudarto05@gmail.com', href: 'mailto:biyansudarto05@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/biyansudarto', href: 'https://linkedin.com/in/biyansudarto' },
-  { label: 'GitHub', value: 'github.com/BiyanSudarto', href: 'https://github.com/BiyanSudarto' },
-  { label: 'Phone', value: '0898063719', href: 'tel:+62898063719' },
-  { label: 'Location', value: 'Tuban, Jawa Timur, Indonesia', href: null },
-]

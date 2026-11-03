@@ -4,12 +4,12 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, X } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { certifications, education, experiences, projects, training } from '@/lib/portfolio-data'
+import { certifications, education, experiences, projects, training, workExperiences } from '@/lib/portfolio-data'
 import imageManifest from '@/lib/image-manifest'
 
 const categories = [
   { id: 'projects', label: 'Projects', count: projects.length },
-  { id: 'work', label: 'Work', count: experiences.filter((item) => !item.org.startsWith('BSO')).length },
+  { id: 'work', label: 'Work', count: workExperiences.length },
   { id: 'organization', label: 'Organization', count: experiences.filter((item) => item.org.startsWith('BSO')).length },
   { id: 'education', label: 'Education', count: 3 },
 ] as const
@@ -92,16 +92,20 @@ export function ExperienceSection() {
                 </article>
               ))}
 
-              {active === 'work' && experiences.filter((item) => !item.org.startsWith('BSO')).map((item) => (
-                <article key={item.org} className="overflow-hidden rounded-2xl border border-border bg-white">
-                  <button type="button" onClick={() => toggleItem(item.org)} aria-expanded={openItem === item.org} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
+              {active === 'work' && workExperiences.map((item) => (
+                <article key={item.title} className="overflow-hidden rounded-2xl border border-border bg-white">
+                  <button type="button" onClick={() => toggleItem(item.title)} aria-expanded={openItem === item.title} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
                     <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
-                      {item.galleryFolder && imageManifest[item.galleryFolder]?.[0] ? (imageManifest[item.galleryFolder][0].toLowerCase().endsWith('.svg') ? <img src={imageManifest[item.galleryFolder][0]} alt="" className="absolute inset-0 h-full w-full object-cover" /> : <Image src={imageManifest[item.galleryFolder][0]} alt="" fill sizes="56px" className="object-cover" />) : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{item.org.slice(0, 2).toUpperCase()}</span>}
+                      {item.galleryFolder && imageManifest[item.galleryFolder]?.[0] ? (imageManifest[item.galleryFolder][0].toLowerCase().endsWith('.svg') ? <img src={imageManifest[item.galleryFolder][0]} alt="" className="absolute inset-0 h-full w-full object-cover" /> : <Image src={imageManifest[item.galleryFolder][0]} alt="" fill sizes="56px" className="object-cover" />) : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{item.title.slice(0, 2).toUpperCase()}</span>}
                     </div>
-                    <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.org}</p><p className="mt-1 truncate text-xs text-muted-foreground">{item.role} · {item.period}</p></div>
-                    <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.org ? 'rotate-180' : ''}`} />
+                    <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.title}</p><p className="mt-1 truncate text-xs text-muted-foreground">{item.role} · {item.period}</p></div>
+                    <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.title ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.org && <div className="border-t border-border px-4 py-4"><p className="text-sm leading-6 text-muted-foreground">{item.description}</p>{item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.org, item.galleryFolder)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}</div>}
+                  {openItem === item.title && <div className="border-t border-border px-4 py-4">
+                    <p className="text-sm leading-6 text-muted-foreground">{item.result}</p>
+                    <ul className="mt-3 space-y-1.5">{item.responsibilities.map((responsibility) => <li key={responsibility} className="flex gap-2 text-xs leading-5 text-muted-foreground"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />{responsibility}</li>)}</ul>
+                    {item.galleryFolder && <button type="button" onClick={() => openFolderGallery(item.title, item.galleryFolder!)} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View work images ({imageManifest[item.galleryFolder]?.length ?? 0}) <ExternalLink className="size-3" /></button>}
+                  </div>}
                 </article>
               ))}
 

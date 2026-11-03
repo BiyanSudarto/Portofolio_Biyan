@@ -22,14 +22,15 @@ export function ExperienceSection() {
   const [openItem, setOpenItem] = useState<string | null>(null)
   const [imageIndex, setImageIndex] = useState(0)
   const [galleryOpen, setGalleryOpen] = useState(false)
-  const activeImage = gallery[imageIndex]
+  const [activeGallery, setActiveGallery] = useState<{ title: string; images: string[] } | null>(null)
+  const activeImage = activeGallery?.images[imageIndex]
 
   useEffect(() => {
     if (!galleryOpen) return
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setGalleryOpen(false)
-      if (event.key === 'ArrowRight') setImageIndex((value) => (value + 1) % gallery.length)
-      if (event.key === 'ArrowLeft') setImageIndex((value) => (value - 1 + gallery.length) % gallery.length)
+      if (event.key === 'ArrowRight' && activeGallery) setImageIndex((value) => (value + 1) % activeGallery.images.length)
+      if (event.key === 'ArrowLeft' && activeGallery) setImageIndex((value) => (value - 1 + activeGallery.images.length) % activeGallery.images.length)
     }
     document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', handleKey)
@@ -37,7 +38,7 @@ export function ExperienceSection() {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKey)
     }
-  }, [galleryOpen])
+  }, [galleryOpen, activeGallery])
 
   const toggleItem = (id: string) => setOpenItem((current) => current === id ? null : id)
 
@@ -80,7 +81,7 @@ export function ExperienceSection() {
                   {openItem === project.title && <div className="border-t border-border px-4 pb-4 pt-3 sm:pl-[5.5rem]">
                     <p className="text-sm leading-6 text-muted-foreground">{project.result}</p>
                     <ul className="mt-3 space-y-1.5">{project.responsibilities.map((item) => <li key={item} className="flex gap-2 text-xs leading-5 text-muted-foreground"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />{item}</li>)}</ul>
-                    {project.image && <button type="button" onClick={() => { setImageIndex(gallery.findIndex((item) => item.title === project.title)); setGalleryOpen(true) }} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View project image <ExternalLink className="size-3" /></button>}
+                    {(project.gallery?.length || project.image) && <button type="button" onClick={() => { setActiveGallery({ title: project.title, images: project.gallery?.length ? project.gallery : [project.image! ] }); setImageIndex(0); setGalleryOpen(true) }} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">View project images <ExternalLink className="size-3" /></button>}
                   </div>}
                 </article>
               ))}
@@ -129,15 +130,15 @@ export function ExperienceSection() {
       </div>
 
       <AnimatePresence>
-        {galleryOpen && activeImage && <motion.div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/35 p-3 backdrop-blur-sm sm:p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => { if (event.target === event.currentTarget) setGalleryOpen(false) }} role="dialog" aria-modal="true" aria-label="Project image viewer">
+        {galleryOpen && activeImage && activeGallery && <motion.div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/35 p-3 backdrop-blur-sm sm:p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => { if (event.target === event.currentTarget) setGalleryOpen(false) }} role="dialog" aria-modal="true" aria-label="Project image viewer">
           <div className="relative flex h-[min(86vh,850px)] w-full max-w-5xl flex-col bg-white shadow-2xl">
             <div className="absolute inset-x-0 top-0 z-10 flex justify-between p-4"><span className="text-[10px] font-semibold uppercase tracking-[.18em] text-neutral-500">Project preview</span><button type="button" onClick={() => setGalleryOpen(false)} aria-label="Close image" className="grid size-9 place-items-center text-neutral-800"><X className="size-6" /></button></div>
             <div className="relative flex flex-1 items-center justify-center px-12 py-14">
-              <AnimatePresence mode="wait"><motion.div key={activeImage.title} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} className="absolute inset-12"><Image src={activeImage.image!} alt={activeImage.title} fill sizes="80vw" className="object-contain" /></motion.div></AnimatePresence>
-              <button type="button" onClick={() => setImageIndex((value) => (value - 1 + gallery.length) % gallery.length)} aria-label="Previous image" className="absolute left-2 grid size-10 place-items-center"><ArrowLeft className="size-6" /></button>
-              <button type="button" onClick={() => setImageIndex((value) => (value + 1) % gallery.length)} aria-label="Next image" className="absolute right-2 grid size-10 place-items-center"><ArrowRight className="size-6" /></button>
+              <AnimatePresence mode="wait"><motion.div key={`${activeGallery.title}-${imageIndex}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} className="absolute inset-12"><Image src={activeImage} alt={activeGallery.title} fill sizes="80vw" className="object-contain" /></motion.div></AnimatePresence>
+              <button type="button" onClick={() => setImageIndex((value) => (value - 1 + (activeGallery?.images.length ?? 1)) % (activeGallery?.images.length ?? 1))} aria-label="Previous image" className="absolute left-2 grid size-10 place-items-center"><ArrowLeft className="size-6" /></button>
+              <button type="button" onClick={() => setImageIndex((value) => (value + 1) % (activeGallery?.images.length ?? 1))} aria-label="Next image" className="absolute right-2 grid size-10 place-items-center"><ArrowRight className="size-6" /></button>
             </div>
-            <div className="pb-5 text-center text-[10px] tracking-widest text-neutral-500">{activeImage.title.toUpperCase()} · {imageIndex + 1} / {gallery.length}</div>
+            <div className="pb-5 text-center text-[10px] tracking-widest text-neutral-500">{activeGallery.title.toUpperCase()} · {imageIndex + 1} / {activeGallery.images.length}</div>
           </div>
         </motion.div>}
       </AnimatePresence>

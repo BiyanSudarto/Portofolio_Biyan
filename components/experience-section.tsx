@@ -78,7 +78,7 @@ export function ExperienceSection() {
                 <article key={project.title} className="overflow-hidden rounded-2xl border border-border bg-white">
                   <button type="button" onClick={() => toggleItem(project.title)} aria-expanded={openItem === project.title} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
                     <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
-                      {project.image ? <Image src={project.image} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
+                      {(project.image ?? (project.galleryFolder ? imageManifest[project.galleryFolder]?.[0] : undefined)) ? <Image src={(project.image ?? imageManifest[project.galleryFolder!]?.[0])!} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="font-display text-sm font-semibold sm:text-base">{project.title}</p>

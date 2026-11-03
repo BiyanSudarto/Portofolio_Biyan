@@ -98,7 +98,7 @@ export function ExperienceSection() {
                     <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
                       {item.galleryFolder && imageManifest[item.galleryFolder]?.[0] ? (imageManifest[item.galleryFolder][0].toLowerCase().endsWith('.svg') ? <img src={imageManifest[item.galleryFolder][0]} alt="" className="absolute inset-0 h-full w-full object-cover" /> : <Image src={imageManifest[item.galleryFolder][0]} alt="" fill sizes="56px" className="object-cover" />) : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{item.title.slice(0, 2).toUpperCase()}</span>}
                     </div>
-                    <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.title}</p><p className="mt-1 truncate text-xs text-muted-foreground">{item.role} · {item.period}</p></div>
+                    <div className="min-w-0 flex-1"><p className="font-display text-sm font-semibold sm:text-base">{item.title}</p><p className="mt-1 truncate text-xs text-muted-foreground">{[item.subtitle, item.role, item.period].filter(Boolean).join(" · ")}</p></div>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.title ? 'rotate-180' : ''}`} />
                   </button>
                   {openItem === item.title && <div className="border-t border-border px-4 py-4">

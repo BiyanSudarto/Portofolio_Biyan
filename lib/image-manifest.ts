@@ -6,8 +6,8 @@ const imageManifest: Record<string, string[]> = {
   "projects/ecosity": [
     "/images/projects/ecosity/project-ecosity.png"
   ],
-  "projects/fix-the-spaceship": [
-    "/images/projects/fix-the-spaceship/project-spaceship.png"
+  "projects/gading-catering": [
+    "/images/projects/gading-catering/preview-dummy.svg"
   ],
   "projects/makelar": [
     "/images/projects/makelar/project-makelar.png"
@@ -23,11 +23,8 @@ const imageManifest: Record<string, string[]> = {
   "projects/red-life": [
     "/images/projects/red-life/project-redlife.png"
   ],
-  "work/gading-catering": [
-    "/images/work/gading-catering/preview-dummy.svg"
-  ],
   "work/nilawarsa-studio": [
-    "/images/work/nilawarsa-studio/preview-dummy.svg"
+    "/images/work/nilawarsa-studio/project-spaceship.png"
   ],
   "work/razzan-store": [
     "/images/work/razzan-store/preview-dummy.svg"

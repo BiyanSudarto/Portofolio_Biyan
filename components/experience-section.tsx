@@ -112,7 +112,7 @@ export function ExperienceSection() {
                     <span className="min-w-0 flex-1"><span className="block font-display text-sm font-semibold">{item.role}</span><span className="mt-1 block text-xs text-muted-foreground">{item.org}</span></span>
                     <ChevronDown className={`size-4 shrink-0 text-muted-foreground transition-transform ${openItem === item.role ? 'rotate-180' : ''}`} />
                   </button>
-                  {openItem === item.role && <p className="border-t border-border px-4 py-4 text-sm leading-6 text-muted-foreground sm:pl-36">{item.description}</p>}
+                  {openItem === item.role && <p className="border-t border-border px-4 py-4 text-sm leading-6 text-muted-foreground">{item.description}</p>}
                 </article>
               ))}
 

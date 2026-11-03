@@ -48,6 +48,18 @@ export const projects: Project[] = [
     result: 'A more structured catering order flow for customers and administrators.',
   },
   {
+    title: 'Catering Financial Accounting',
+    subtitle: 'Gading Catering',
+    genre: 'Financial Management System',
+    platform: 'Web',
+    role: 'Full Stack Developer',
+    period: 'Jan 2026 — Feb 2026',
+    galleryFolder: 'projects/gading-catering',
+    categories: ['Web Development', 'Programming'],
+    responsibilities: ['Simplified catering bookkeeping through automated cash-flow records', 'Designed the MySQL database schema', 'Built a multi-item purchase input form'],
+    result: 'A catering financial accounting system for more structured cash-flow and purchase recording.',
+  },
+  {
     title: 'Red Life',
     subtitle: 'Mars survival game',
     genre: 'Survival',
@@ -81,6 +93,21 @@ export const projects: Project[] = [
     responsibilities: ['Designed the quiz gameplay loop', 'Created Remove Wrong Answer, Slow Time, and Second Chance abilities', 'Tuned the question timer to add decision pressure'],
     result: 'Interactive educational gameplay with strategic decision-making.',
   },
+]
+
+export const workExperiences: Project[] = [
+  {
+    title: 'Razzan Store',
+    subtitle: 'Tuban',
+    genre: 'Game Top-up Backend System',
+    platform: 'Web',
+    role: 'Full Stack Developer',
+    period: 'Aug 2026 — Present',
+    galleryFolder: 'work/razzan-store',
+    categories: ['Programming'],
+    responsibilities: ['Developed a game top-up backend using Node.js and Express.js', 'Integrated APIs for payment processing and product delivery', 'Designed transaction verification and a database for automatic order-status updates'],
+    result: 'A backend transaction flow supporting payment verification and automated product fulfillment.',
+  },
   {
     title: 'Fix The Spaceship',
     subtitle: 'Nilawarsa Studio',
@@ -88,35 +115,14 @@ export const projects: Project[] = [
     platform: 'Desktop',
     role: 'Programmer',
     period: 'May 2026 — Jun 2026',
-    galleryFolder: 'projects/fix-the-spaceship',
+    galleryFolder: 'work/nilawarsa-studio',
     categories: ['Programming'],
-    responsibilities: ['Programmed core gameplay mechanics and UI', 'Built waypoint-based enemy patrol behaviour', 'Implemented static and dynamic hazards with collision detection'],
-    result: 'Gameplay systems and enemy behaviours implemented for a puzzle-platforming experience.',
+    responsibilities: ['Programmed core game systems, mechanics, and UI to improve the gameplay experience', 'Wrote automated enemy AI scripts using waypoint-based patrol logic', 'Implemented static and dynamic hazards with precise collision detection'],
+    result: 'Gameplay systems, enemy patrol behaviour, and hazards implemented for a puzzle-platforming game.',
   },
 ]
 
 export const experiences = [
-  {
-    period: 'Aug 2026 — Present',
-    role: 'Full Stack Developer',
-    org: 'Razzan Store',
-    galleryFolder: 'work/razzan-store',
-    description: 'Developing a game top-up backend using Node.js and Express.js, integrating Midtrans and Digiflazz for QRIS payments and automated product delivery, and designing transaction verification with SQLite order-status updates.',
-  },
-  {
-    period: 'Jan 2026 — Feb 2026',
-    role: 'Full Stack Developer',
-    org: 'Gading Catering',
-    galleryFolder: 'work/gading-catering',
-    description: 'Developed a catering bookkeeping system to automate cash-flow records, designed the MySQL database schema, and built multi-item purchase forms for transaction and expense recording.',
-  },
-  {
-    period: 'Jan 2025 — Jul 2025',
-    role: 'Programmer',
-    org: 'Nilawarsa Studio',
-    galleryFolder: 'work/nilawarsa-studio',
-    description: 'Programmed core game systems, mechanics, and UI; wrote waypoint-based enemy patrol AI; and implemented static and dynamic hazards with collision detection.',
-  },
   {
     period: 'Sep 2024 — Sep 2025',
     role: 'Expert Staff — Art & Sport',

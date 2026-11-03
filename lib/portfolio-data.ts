@@ -1,22 +1,9 @@
-export const navLinks = [
-  { label: 'Work', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-]
-
 export const highlights = [
   'Full-Stack Development',
   'Backend Systems',
   'Database Design',
   'Gameplay Mechanics',
   'Project Leadership',
-]
-
-export const skillGroups = [
-  { title: 'Development', skills: ['Node.js', 'Express.js', 'PHP', 'JavaScript', 'HTML / CSS'] },
-  { title: 'Database & Tools', skills: ['MySQL', 'SQLite', 'Git / GitHub', 'Visual Studio', 'Microsoft Excel', 'WordPress'] },
-  { title: 'Game & Product', skills: ['Game Mechanics', 'Progression Design', 'System Balancing', 'Unity', 'Unreal Engine', 'Figma'] },
 ]
 
 export const projectFilters = ['All', 'Web Development', 'Game Design', 'Programming'] as const
@@ -29,8 +16,6 @@ export type Project = {
   platform: string
   role: string
   period?: string
-  image?: string
-  gallery?: string[]
   galleryFolder?: string
   categories: ProjectFilter[]
   responsibilities: string[]
@@ -57,7 +42,6 @@ export const projects: Project[] = [
     platform: 'Web',
     role: 'Web Developer',
     period: 'May 2026 — Jun 2026',
-    image: '/images/projects/catering-ordering/katering-remake.png',
     galleryFolder: 'projects/catering-ordering',
     categories: ['Web Development', 'Programming'],
     responsibilities: ['Built an interactive menu catalog and automatic order-price calculation', 'Developed an admin CRUD dashboard for menu, price, and stock management', 'Applied automatic form validation when ingredients were out of stock', 'Integrated WhatsApp API to send structured order details'],
@@ -70,7 +54,6 @@ export const projects: Project[] = [
     platform: 'PC',
     role: 'Game Designer / Programmer',
     period: 'Jun 2025 — Jul 2026',
-    image: '/images/projects/red-life/project-redlife.png',
     galleryFolder: 'projects/red-life',
     categories: ['Game Design', 'Programming'],
     responsibilities: ['Designed 20 gameplay mechanics, character progression, and the survival loop', 'Resolved more than 40% of design issues before they affected production', 'Analyzed playtest data to improve player interest by 80%', 'Programmed mechanics independently, improving programmer workflow efficiency by 30%'],
@@ -81,7 +64,6 @@ export const projects: Project[] = [
     genre: 'Simulation / Management',
     platform: 'PC',
     role: 'Game Designer',
-    image: '/images/projects/ecosity/project-ecosity.png',
     galleryFolder: 'projects/ecosity',
     categories: ['Game Design'],
     responsibilities: ['Designed quest, shop, gardening, and water systems', 'Planned renewable-energy management and automation', 'Structured upgrade progression for tools and facilities'],
@@ -92,7 +74,6 @@ export const projects: Project[] = [
     genre: '2D Platformer',
     platform: 'Desktop',
     role: 'Game Designer',
-    image: '/images/projects/project-sea/project-sea.png',
     galleryFolder: 'projects/project-sea',
     categories: ['Game Design'],
     responsibilities: ['Designed the quiz gameplay loop', 'Created Remove Wrong Answer, Slow Time, and Second Chance abilities', 'Tuned the question timer to add decision pressure'],
@@ -104,7 +85,6 @@ export const projects: Project[] = [
     genre: 'Puzzle Platformer',
     platform: 'Desktop',
     role: 'Programmer',
-    image: '/images/projects/fix-the-spaceship/project-spaceship.png',
     galleryFolder: 'projects/fix-the-spaceship',
     categories: ['Programming'],
     responsibilities: ['Programmed core gameplay mechanics and UI', 'Built waypoint-based enemy patrol behaviour', 'Implemented static and dynamic hazards with collision detection'],
@@ -163,10 +143,3 @@ export const training = [
   { title: 'Belajar Dasar Cloud dan Gen AI di AWS', provider: 'Dicoding', period: 'Sep 2026 — Nov 2026' },
 ]
 
-export const contactChannels = [
-  { label: 'Email', value: 'biyansudarto05@gmail.com', href: 'mailto:biyansudarto05@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/biyansudarto', href: 'https://linkedin.com/in/biyansudarto' },
-  { label: 'GitHub', value: 'github.com/BiyanSudarto', href: 'https://github.com/BiyanSudarto' },
-  { label: 'Phone', value: '0898063719', href: 'tel:+62898063719' },
-  { label: 'Location', value: 'Tuban, Jawa Timur, Indonesia', href: null },
-]

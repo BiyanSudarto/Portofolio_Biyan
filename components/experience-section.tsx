@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, Maximize2, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, X } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { certifications, education, experiences, projects, training } from '@/lib/portfolio-data'
@@ -15,8 +15,6 @@ const categories = [
 ] as const
 
 type Category = (typeof categories)[number]['id']
-
-const gallery = projects.filter((project) => project.image)
 
 export function ExperienceSection() {
   const [active, setActive] = useState<Category>('projects')
@@ -78,7 +76,7 @@ export function ExperienceSection() {
                 <article key={project.title} className="overflow-hidden rounded-2xl border border-border bg-white">
                   <button type="button" onClick={() => toggleItem(project.title)} aria-expanded={openItem === project.title} className="flex w-full items-center gap-4 p-3.5 text-left sm:p-4">
                     <div className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-secondary">
-                      {(project.image ?? (project.galleryFolder ? imageManifest[project.galleryFolder]?.[0] : undefined)) ? <Image src={(project.image ?? imageManifest[project.galleryFolder!]?.[0])!} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
+                      {(project.galleryFolder ? imageManifest[project.galleryFolder]?.[0] : undefined) ? <Image src={imageManifest[project.galleryFolder!]?.[0]!} alt="" fill sizes="56px" className="object-cover" /> : <span className="grid h-full place-items-center font-display text-lg font-semibold text-primary">{project.title.slice(0,2).toUpperCase()}</span>}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="font-display text-sm font-semibold sm:text-base">{project.title}</p>

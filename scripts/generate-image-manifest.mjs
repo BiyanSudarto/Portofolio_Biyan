@@ -25,8 +25,9 @@ async function scan(directory, folder = '') {
     }
 
     if (!supported.has(path.extname(entry.name).toLowerCase())) continue
-    const folderName = relative.includes('/') ? relative.split('/')[0] : ''
-    if (!folderName) continue
+    const parts = relative.split('/')
+    if (parts.length < 3) continue
+    const folderName = `${parts[0]}/${parts[1]}`
     const url = '/images/' + relative.split(path.sep).join('/')
     ;(manifest[folderName] ??= []).push(url)
   }

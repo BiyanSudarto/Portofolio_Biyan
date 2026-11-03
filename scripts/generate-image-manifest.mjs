@@ -3,7 +3,7 @@ import path from 'node:path'
 
 const root = path.join(process.cwd(), 'public', 'images')
 const output = path.join(process.cwd(), 'lib', 'image-manifest.ts')
-const supported = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif'])
+const supported = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif', '.svg'])
 const manifest = {}
 
 async function scan(directory, folder = '') {

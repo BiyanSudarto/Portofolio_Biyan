@@ -7,8 +7,9 @@ import { useEffect, useMemo, useState } from 'react'
 import { SectionHeading } from '@/components/reveal'
 import { projectFilters, projects, type ProjectFilter } from '@/lib/portfolio-data'
 import { cn } from '@/lib/utils'
+import imageManifest from '@/lib/image-manifest'
 
-const galleryProjects = projects.filter((project) => project.image)
+const galleryProjects = projects.filter((project) => project.galleryFolder)
 
 export function ProjectsSection() {
   const [filter, setFilter] = useState<ProjectFilter>('All')
@@ -65,7 +66,7 @@ export function ProjectsSection() {
           {visible.map((project) => (
             <motion.article key={project.title} layout initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .3 }} className="group overflow-hidden rounded-3xl border border-border bg-card">
               <div className="relative aspect-[16/9] overflow-hidden bg-secondary">
-                {project.image ? <Image src={project.image} alt={`Preview of ${project.title}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" /> : <div className="flex h-full items-center justify-center p-8"><span className="font-display text-5xl font-semibold tracking-tight text-primary/70">{project.title.split(' ').slice(0, 2).map((word) => word[0]).join('')}</span></div>}
+                {project.galleryFolder && imageManifest[project.galleryFolder]?.[0] ? <Image src={imageManifest[project.galleryFolder][0]} alt={`Preview of ${project.title}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" /> : <div className="flex h-full items-center justify-center p-8"><span className="font-display text-5xl font-semibold tracking-tight text-primary/70">{project.title.split(' ').slice(0, 2).map((word) => word[0]).join('')}</span></div>}
                 <span className="absolute bottom-4 left-4 rounded-full bg-background/90 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur">{project.genre}</span>
               </div>
               <div className="p-6 sm:p-7">
@@ -142,7 +143,7 @@ export function ProjectsSection() {
                       transition={{ duration: .24, ease: 'easeInOut' }}
                     >
                       <Image
-                        src={activeProject.image!}
+                        src={imageManifest[activeProject.galleryFolder!]?.[0] ?? ''}
                         alt={`Temporary gallery image for ${activeProject.title}`}
                         fill
                         priority

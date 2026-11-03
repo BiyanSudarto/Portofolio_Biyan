@@ -1,43 +1,35 @@
-import { Brain, Check, Gamepad2, Layers, Scale, Target } from 'lucide-react'
+import { Brain, Check, Code2, Database, Gamepad2, Workflow } from 'lucide-react'
 import { Reveal, SectionHeading } from '@/components/reveal'
 import { highlights } from '@/lib/portfolio-data'
 
-const icons = [Gamepad2, Target, Layers, Scale, Brain]
+const icons = [Code2, Database, Gamepad2, Workflow, Brain]
 
 export function AboutSection() {
   return (
     <section id="about" className="relative mx-auto max-w-6xl px-6 py-24">
       <SectionHeading
         eyebrow="About Me"
-        title="Systems designed around the player"
-        description="Design that respects the player's time, curiosity, and desire to master something."
+        title="Technology, systems, and player experiences"
+        description="I enjoy turning complex requirements into useful products and understandable gameplay systems."
       />
-
       <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal className="flex flex-col gap-5">
           <p className="text-lg leading-relaxed text-pretty">
-            My name is <span className="font-semibold text-primary">Atmaghani Biyan Sudarto</span>.
+            I’m <span className="font-semibold text-primary">Atmaghani Biyan Sudarto</span>, a D4 Game Technology graduate from Politeknik Elektronika Negeri Surabaya (PENS).
           </p>
           <p className="leading-relaxed text-pretty text-muted-foreground">
-            I am a Designer & Programmer with over two years of experience in designing gameplay mechanics,
-            progression systems, and player experiences.
+            My work spans full-stack web applications, backend transaction systems, and game development. I use technologies such as Node.js, Express.js, PHP, JavaScript, MySQL, and SQLite to build web-based solutions.
           </p>
           <p className="leading-relaxed text-pretty text-muted-foreground">
-            Bachelor's degree in Game Technology from Politeknik Elektronika Negeri Surabaya (PENS).
+            In game projects, I work across gameplay mechanics, character progression, survival loops, and implementation. I also led the Red Life project and contributed to a national first-place game application team.
           </p>
-          <p className="leading-relaxed text-pretty text-muted-foreground">
-            I enjoy creating systems that are easy to understand, rewarding to master, and capable
-            of delivering memorable gameplay.
-          </p>
-
           <div className="glass mt-2 rounded-2xl p-5">
-            <p className="font-display text-sm font-semibold text-primary">Currently focused on</p>
+            <p className="font-display text-sm font-semibold text-primary">What I value</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-             Combining game design mechanics and progression balance with full-stack web development to create interactive and scalable digital solutions.
+              Clear requirements, practical problem-solving, maintainable systems, and experiences that are easy to understand.
             </p>
           </div>
         </Reveal>
-
         <div className="grid gap-4 sm:grid-cols-2">
           {highlights.map((item, index) => {
             const Icon = icons[index % icons.length]
@@ -51,9 +43,6 @@ export function AboutSection() {
                     <Check className="size-4 text-primary" />
                   </div>
                   <h3 className="font-display mt-4 text-base font-semibold">{item}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    Designed, documented, and balanced across shipped student and studio projects.
-                  </p>
                 </article>
               </Reveal>
             )

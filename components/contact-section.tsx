@@ -1,64 +1,17 @@
-'use client'
-
-import { ArrowRight, Briefcase, Code, Mail, MapPin, Phone } from 'lucide-react'
-import { useState } from 'react'
-import { Reveal, SectionHeading } from '@/components/reveal'
-import { contactChannels } from '@/lib/portfolio-data'
-
-const channelIcons: Record<string, typeof Mail> = {
-  Email: Mail,
-  LinkedIn: Briefcase,
-  GitHub: Code,
-  Phone: Phone,
-  Location: MapPin,
-}
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 
 export function ContactSection() {
-  const [sent, setSent] = useState(false)
-
   return (
-    <section id="contact" className="relative mx-auto max-w-6xl px-6 py-24">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Have a project in mind?"
-        description="Open to opportunities and collaborations in web development, backend systems, and game development."
-      />
-      <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.2fr]">
-        <Reveal className="flex flex-col gap-3">
-          {contactChannels.map((channel) => {
-            const Icon = channelIcons[channel.label] ?? Mail
-            const content = (
-              <span className="glass flex items-center gap-4 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40">
-                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/12 text-primary"><Icon className="size-5" /></span>
-                <span className="min-w-0">
-                  <span className="block text-xs text-muted-foreground">{channel.label}</span>
-                  <span className="block truncate text-sm font-medium">{channel.value}</span>
-                </span>
-              </span>
-            )
-            return channel.href ? (
-              <a key={channel.label} href={channel.href} target={channel.href.startsWith('http') ? '_blank' : undefined} rel={channel.href.startsWith('http') ? 'noreferrer' : undefined} className="block">{content}</a>
-            ) : <div key={channel.label}>{content}</div>
-          })}
-        </Reveal>
-        <Reveal delay={0.1}>
-          <form className="glass flex flex-col gap-4 rounded-3xl p-6 sm:p-8" onSubmit={(event) => {
-            event.preventDefault()
-            const data = new FormData(event.currentTarget)
-            const subject = encodeURIComponent(`Portfolio inquiry from ${data.get('name')}`)
-            const body = encodeURIComponent(`From: ${data.get('email')}\n\n${String(data.get('message') ?? '')}`)
-            window.location.href = `mailto:biyansudarto05@gmail.com?subject=${subject}&body=${body}`
-            setSent(true)
-          }}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="flex flex-col gap-2 text-sm"><span className="text-muted-foreground">Name</span><input required name="name" autoComplete="name" placeholder="Your name" className="rounded-xl border border-input bg-background/40 px-4 py-3 text-sm outline-none transition-colors focus:border-primary/60" /></label>
-              <label className="flex flex-col gap-2 text-sm"><span className="text-muted-foreground">Email</span><input required type="email" name="email" autoComplete="email" placeholder="you@example.com" className="rounded-xl border border-input bg-background/40 px-4 py-3 text-sm outline-none transition-colors focus:border-primary/60" /></label>
-            </div>
-            <label className="flex flex-col gap-2 text-sm"><span className="text-muted-foreground">Message</span><textarea required name="message" rows={5} placeholder="Tell me about the project or opportunity..." className="resize-none rounded-xl border border-input bg-background/40 px-4 py-3 text-sm outline-none transition-colors focus:border-primary/60" /></label>
-            <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01]">Send Message <ArrowRight className="size-4" /></button>
-            <p aria-live="polite" className="min-h-5 text-xs text-primary">{sent ? 'Opening your email client — thank you for reaching out.' : ''}</p>
-          </form>
-        </Reveal>
+    <section id="contact" className="flex flex-col gap-4 border-t border-border py-8 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">Get in touch</p>
+        <h2 className="mt-1 font-display text-xl font-semibold">Let’s build something useful.</h2>
+        <a href="mailto:biyansudarto05@gmail.com" className="mt-1 inline-block text-sm text-muted-foreground hover:text-primary">biyansudarto05@gmail.com</a>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <a href="mailto:biyansudarto05@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-foreground"><Mail className="size-3.5" /> Send email</a>
+        <a href="https://linkedin.com/in/biyansudarto" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><Linkedin className="size-4" /></a>
+        <a href="https://github.com/BiyanSudarto" target="_blank" rel="noreferrer" aria-label="GitHub" className="grid size-10 place-items-center rounded-full border border-border bg-white text-primary hover:border-primary"><Github className="size-4" /></a>
       </div>
     </section>
   )

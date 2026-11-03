@@ -23,7 +23,7 @@ export function ProjectsSection() {
       </div>
       <motion.div layout className="mt-8 grid gap-5 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
-          {visible.map((project, index) => (
+          {visible.map((project) => (
             <motion.article key={project.title} layout initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .3 }} className="group overflow-hidden rounded-3xl border border-border bg-card">
               <div className="relative aspect-[16/9] overflow-hidden bg-secondary">
                 {project.image ? <Image src={project.image} alt={`Preview of ${project.title}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" /> : <div className="flex h-full items-center justify-center p-8"><span className="font-display text-5xl font-semibold tracking-tight text-primary/70">{project.title.split(' ').slice(0, 2).map((word) => word[0]).join('')}</span></div>}
@@ -34,6 +34,7 @@ export function ProjectsSection() {
                   <div><h3 className="font-display text-2xl font-semibold tracking-tight">{project.title}</h3>{project.subtitle && <p className="mt-1 text-sm text-muted-foreground">{project.subtitle}</p>}</div>
                   <span className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground">{project.role}</span>
                 </div>
+                <div className="mt-2 text-xs text-muted-foreground">{project.period}</div>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{project.result}</p>
                 <ul className="mt-5 space-y-2">{project.responsibilities.map((item) => <li key={item} className="flex gap-2 text-sm leading-6 text-muted-foreground"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />{item}</li>)}</ul>
                 <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground"><span>{project.platform}</span><a href="#contact" className="inline-flex items-center gap-1 font-semibold text-primary hover:underline">Discuss project <ArrowUpRight className="size-3.5" /></a></div>

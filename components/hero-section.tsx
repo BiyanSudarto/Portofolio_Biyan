@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowDown, ArrowUpRight, Download } from 'lucide-react'
+import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 
@@ -13,22 +13,22 @@ export function HeroSection() {
             <span className="h-px w-8 bg-primary" /> Portfolio · 2026
           </p>
           <h1 className="font-display max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-.055em] text-balance sm:text-6xl lg:text-7xl">
-            I build digital products <span className="text-primary">and interactive experiences.</span>
+            Building digital products <span className="text-primary">with purpose.</span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
-            I’m Atmaghani Biyan Sudarto — a full-stack developer and game designer focused on building practical web systems, thoughtful mechanics, and clear user experiences.
+            I’m Atmaghani Biyan Sudarto — a full-stack developer and game designer who builds practical web systems and thoughtful gameplay experiences.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
               Explore selected work <ArrowUpRight className="size-4" />
             </a>
-            <a href="/CV_Atmaghani_Biyan_Sudarto.pdf" download className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
-              Download CV <Download className="size-4" />
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
+              Get in touch
             </a>
           </div>
           <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-border pt-6 text-sm text-muted-foreground">
             <span><strong className="mr-2 font-semibold text-foreground">Based in</strong>Tuban, Indonesia</span>
-            <span><strong className="mr-2 font-semibold text-foreground">Focus</strong>Web systems · Game design</span>
+            <span><strong className="mr-2 font-semibold text-foreground">Focus</strong>Full-stack development · Game design</span>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .7, delay: .1 }} className="relative mx-auto w-full max-w-[340px]">

@@ -27,7 +27,7 @@ export function HeroSection() {
       <div className="relative order-1 mx-auto w-full max-w-[230px] lg:order-2 lg:max-w-[300px]">
         <div className="absolute -bottom-3 -left-3 -z-10 h-4/5 w-4/5 rounded-[1.6rem] bg-secondary" />
         <div className="overflow-hidden rounded-[1.6rem] border border-border bg-white p-1.5 shadow-lg shadow-black/5">
-          <Image src="/images/biyan-portrait.png" alt="Atmaghani Biyan Sudarto" title="Atmaghani Biyan Sudarto" draggable className="aspect-[4/5] w-full cursor-grab rounded-[1.2rem] object-cover active:cursor-grabbing" width={640} height={800} priority />
+          <Image src="/images/profile/biyan-portrait.png" alt="Atmaghani Biyan Sudarto" title="Atmaghani Biyan Sudarto" draggable className="aspect-[4/5] w-full cursor-grab rounded-[1.2rem] object-cover active:cursor-grabbing" width={640} height={800} priority />
         </div>
       </div>
     </section>
